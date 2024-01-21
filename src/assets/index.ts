@@ -10,5 +10,9 @@ import ts from "./ts.svg";
 import vercel from "./vercel.svg";
 import docker from "./docker.svg";
 import rust from "./rust.svg";
-
-export { go, rust, mongodb, mysql, nextjs, nodejs, react, redux, tailwind, ts, vercel, docker };
+import python from "./python-logo-only.png";
+import socketio from "./Socket-io.svg";
+import redis from "./redis-logo-full-color-rgb.svg";
+import git from "./Git-Icon-1788C.svg";
+import postgresssql from "./elephant.png";
+export { go, git, postgresssql, rust, redis, mongodb, mysql, socketio, nextjs, nodejs, react, redux, tailwind, ts, vercel, docker, python };

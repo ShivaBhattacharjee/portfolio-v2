@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import ConnectionLine from "./connection-line";
 import { cn } from "@/lib/utils";
-import { go, mongodb, mysql, redux, nextjs, nodejs, react, tailwind, ts, vercel, docker, rust } from "@/assets/index";
+import { go, mongodb, mysql, redux, nextjs, nodejs, react, tailwind, ts, vercel, docker, rust, python, socketio, redis, git, postgresssql } from "@/assets/index";
 type TechBoxProps = {
     pinId: string;
     title: string;
@@ -105,7 +105,7 @@ const renderPins = (pinCount: number, idPrefix: string, refs: React.RefObject<HT
     );
 };
 
-const techs = {
+export const techs = {
     stage1: [
         {
             title: "React",
@@ -140,9 +140,9 @@ const techs = {
             color: "#61DAFB",
         },
         {
-            title: "MySQL",
-            image: mysql,
-            color: "#00618A",
+            title: "Git",
+            image: git,
+            color: "#FF0000",
         },
     ],
     stage3: [
@@ -152,8 +152,8 @@ const techs = {
             color: "#45A538",
         },
         {
-            title: "Firebase",
-            image: "/logo.svg",
+            title: "SQL",
+            image: postgresssql,
             color: "#f58220",
         },
     ],
@@ -169,13 +169,13 @@ const techs = {
             color: "#764abc",
         },
         {
-            title: "NestJS",
-            image: "/logo.svg",
+            title: "Socket.io",
+            image: socketio,
             color: "#b52d3f",
         },
         {
-            title: "Flutter",
-            image: "/logo.svg",
+            title: "Python",
+            image: python,
             color: "#27AACD",
         },
         {

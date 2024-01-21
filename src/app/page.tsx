@@ -1,9 +1,9 @@
 import TypingAnimation from "@/components/TypingAnimation";
 import { TechStack } from "@/components/stacks";
 import { GitHubLogoIcon, GlobeIcon, InstagramLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
-import { MouseIcon, MoveDown, Terminal } from "lucide-react";
+import { MailPlus, MouseIcon, Pi, Terminal } from "lucide-react";
 import React from "react";
-
+const skills = ["React", "Next.js", "Typescript", "Tailwind CSS", "Rust", "Docker", "SQL", "MongoDB", "NodeJS", "Redux", "Socket.io", "Python", "GIT", "GO"];
 const page = () => {
     return (
         <section className="lg:max-w-[50%] mt-20 md:mt-36 md:max-w-[80%] relative md:m-auto p-4 flex flex-col min-h-screen">
@@ -19,9 +19,9 @@ const page = () => {
                     I am a <TypingAnimation />
                 </h1>
                 <p className=" opacity-80 text-sm lg:text-xl lg:mb-2 font-medium">
-                    I develop open-source <span className=" dark:text-blue-300 text-blue-500 uppercase font-bold">full-stack</span> apps/tools and occasionally take on <span className=" uppercase dark:text-blue-300 text-blue-500 font-bold tracking-wider">freelance</span> projects.
+                    I develop open-source <span className="  text-blue-500 uppercase font-bold">full-stack</span> apps/tools and occasionally take on <span className=" uppercase text-blue-500 font-bold tracking-wider">freelance</span> projects.
                 </p>
-                <div className="flex items-center gap-6">
+                <div className="flex items-center gap-3 flex-wrap">
                     <button className="rounded-lg hover:bg-black hover:dark:bg-white duration-200 hover:text-white hover:dark:text-black w-32 lg:text-2xl p-2 lg:pl-5 lg:pr-5 font-medium border-2 border-black/40 dark:border-white/40 flex justify-center items-center gap-2">
                         <GlobeIcon />
                         Contact
@@ -32,6 +32,9 @@ const page = () => {
                     <a href="https://twitter.com/sh17va" target="_blank" rel="noopener noreferrer">
                         <TwitterLogoIcon className=" h-6 lg:h-10 w-8 lg:w-8 duration-200 hover:-translate-y-2 cursor-pointer" />
                     </a>
+                    <a href="mailto:itsshivahere@outlook.com?body=Hello" target="_blank" rel="noopener noreferrer">
+                        <MailPlus className=" h-6 lg:h-10 w-8 lg:w-8 duration-200 hover:-translate-y-2 cursor-pointer" />
+                    </a>
                     <a href="https://instagram.com/shivahereig" target="_blank" rel="noopener noreferrer">
                         <InstagramLogoIcon className=" h-6 lg:h-10 w-8 lg:w-8 duration-200 hover:-translate-y-2 cursor-pointer" />
                     </a>
@@ -39,11 +42,21 @@ const page = () => {
 
                 <div className=" opacity-70 mt-12 justify-center flex items-center flex-col">
                     <MouseIcon size={40} className=" animate-bounce" />
-                    <span className="flex gap-2 text-sm font-medium justify-center items-center">Scroll Down</span>
+                    <span className="text-sm font-medium">Scroll Down</span>
                 </div>
 
                 <div className=" mt-8 w-full flex md:justify-center md:items-center md:text-center flex-col lg:mt-28">
-                    <h1 className=" text-2xl tracking-wide lg:text-4xl font-bold  md:border-b-2 ">Skills</h1>
+                    <h1 className=" text-4xl flex gap-2 items-center tracking-wide lg:text-7xl font-bold  md:border-b-2 ">
+                        <Pi className=" opacity-70 lg:w-12 lg:h-12" /> Skills
+                    </h1>
+                    <p className=" mt-2 lg:mt-7 text-sm md:text-lg opacity-70 font-medium uppercase tracking-widest ">I mostly craft full stack web apps using M.E.R.N stack</p>
+                    <div className=" md:hidden mt-4 flex gap-2 flex-wrap">
+                        {skills.map((skill, index) => (
+                            <span key={index} className={`text-sm font-medium dark:text-white border-2 border-neutral-950  dark:bg-neutral-700 dark:border-white/10 dark:shadow-lg p-2 rounded-lg mt-2 mr-2 ${index % 2 === 1 ? " rotate-3" : " -rotate-3"}`}>
+                                {skill}
+                            </span>
+                        ))}
+                    </div>
                     <TechStack />
                 </div>
             </div>

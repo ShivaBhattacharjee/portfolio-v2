@@ -29,9 +29,9 @@ const navbarItems = [
 const Navbar = () => {
     const pathname = usePathname();
     return (
-        <nav className="sticky top-0 z-50">
+        <nav className="z-50 lg:sticky lg:top-0">
             {/* ipad & desktop navbar */}
-            <section className="flex w-full justify-between items-center  m-auto p-2 mt-4 rounded-full">
+            <section className="flex w-full justify-between items-center  m-auto p-2 rounded-full">
                 <Link href={"/"} className=" uppercase text-3xl font-bold tracking-widest relative">
                     Shiva <span className=" text-blue-500 font-bold text-8xl absolute -bottom-2">.</span>{" "}
                 </Link>
@@ -48,12 +48,12 @@ const Navbar = () => {
                 <ModeToggle />
             </section>
             {/* mobile navbar */}
-            <section className="fixed md:hidden bottom-10 flex flex-wrap justify-center w-full">
-                <div className="border-black/10 dark:border-white/10 flex gap-3 flex-wrap items-center w-[75%] justify-between p-2 bg-black/20 backdrop-blur-lg border-2 rounded-full">
+            <section className="fixed z-50 md:hidden bottom-10 flex flex-wrap justify-center w-full">
+                <div className="border-black/10 dark:border-white/10 flex gap-3 flex-wrap items-center w-[75%] justify-between p-2 bg-black/20 dark:bg-white/5 backdrop-blur-lg border-2 rounded-full">
                     {navbarItems.map((item) => {
                         const isActive = (pathname.includes(item.href) && item.href.length > 1) || pathname === item.href;
                         return (
-                            <Link key={item.name} href={item.href} className={` ${isActive && "bg-black dark:bg-white/10 rounded-full text-white dark:text-black"} p-2 text-black dark:text-white`}>
+                            <Link key={item.name} href={item.href} className={` ${isActive && "bg-black dark:bg-white/30 rounded-full text-white dark:text-black"} p-2 text-black dark:text-white`}>
                                 <item.icon />
                             </Link>
                         );
