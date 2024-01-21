@@ -1,4 +1,4 @@
-import Terminalcomp from "@/components/Terminalcomp";
+import Terminalcomp from "@/components/terminal/Terminalcomp";
 import TypingAnimation from "@/components/TypingAnimation";
 import { TechStack } from "@/components/stacks";
 import { GitHubLogoIcon, GlobeIcon, InstagramLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
