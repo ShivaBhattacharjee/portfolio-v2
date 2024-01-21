@@ -55,7 +55,7 @@ const Terminalcomp: React.FC = () => {
         }
     };
 
-    const processCommand = () => {
+    const processCommand = async () => {
         const command = input.trim().toLowerCase();
 
         let output: string | JSX.Element;
@@ -63,11 +63,8 @@ const Terminalcomp: React.FC = () => {
             case "hello":
                 output = "Yahallo! how can i help you??";
                 break;
-            case "sudo":
-            case "su":
-                output = "Why do you need sudo cheeky brat ?";
-                break;
             case "ls -a":
+            case "ls":
                 output = ".open_me";
                 break;
             case "cat .open_me":
@@ -76,6 +73,10 @@ const Terminalcomp: React.FC = () => {
                 break;
             case "shiva":
                 output = "Hello there! I am Shiva, a Full Stack Developer experienced in the MERN stack, currently pursuing my Bachelor's  in Computer Science and Engineering. Type about to know more about me";
+                break;
+            case "neofetch":
+                window.location.href = "https://www.youtube.com/watch?v=Rl1ImG2b1k8&t=51s";
+                output = "";
                 break;
             case "about":
                 router.push("/about");
@@ -92,11 +93,21 @@ const Terminalcomp: React.FC = () => {
             case "help":
                 output = <HelpCommand />;
                 break;
-            case "ip":
-                output = "IP Address: 192.168.1.1";
-                break;
             case "quibble":
-                output = "Under development";
+                window.location.href = "https://quibbleai.vercel.app";
+                output = "";
+                break;
+            case "animetrix":
+                window.location.href = "https://animetrix.xyz";
+                output = "";
+                break;
+            case "muxik":
+                window.location.href = "https://muxik.netlify.app";
+                output = "";
+                break;
+            case "synthia":
+                window.location.href = "https://github.com/shivabhattacharjee/synthia";
+                output = "";
                 break;
             case "clear":
                 setCommands([]);
@@ -108,9 +119,12 @@ const Terminalcomp: React.FC = () => {
                 } else if (command.startsWith("rm")) {
                     window.location.href = "https://www.youtube.com/watch?v=AlLhMySQTlo";
                     output = "";
-                } else if (command.startsWith("sex") || command.startsWith("fuck")) {
-                    window.location.href = "https://www.youtube.com/watch?v=Rl1ImG2b1k8&t=51s";
-                    output = "";
+                } else if (command.includes("apt")) {
+                    output = "You are a reliable person";
+                } else if (command.includes("pacman")) {
+                    output = "certified racist and a virgin (likes to go fast)";
+                } else if (command.includes("dnf")) {
+                    output = "gets the job done slowly but surely";
                 } else if (/^\d+[+\-*/]\d+$/.test(command)) {
                     try {
                         const result = eval(command);
@@ -136,7 +150,7 @@ const Terminalcomp: React.FC = () => {
     };
 
     return (
-        <div ref={terminalRef} className="border-2 p-2 border-black/30 dark:border-white/30 rounded-lg h-[400px] overflow-y-auto w-full">
+        <div ref={terminalRef} className="border-2 p-2 border-black/30 dark:border-white/30 rounded-lg h-[500px] lg:h-[400px] overflow-y-auto w-full">
             <div className="flex justify-between mb-5 items-center sticky top-0 dark:bg-black/20 z-20 backdrop-blur-lg bg-white">
                 <div className="flex gap-3" onClick={() => (window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ")}>
                     <div className="w-4 h-4 duration-200 cursor-pointer bg-red-500 rounded-full"></div>
@@ -148,8 +162,10 @@ const Terminalcomp: React.FC = () => {
                     Zsh
                 </span>
             </div>
-            <h1 className="text-sm font-medium  opacity-70 tracking-wide">Welcome to my website! Get started by typing `help` command below</h1>
-            <span className=" text-xs opacity-70 mb-3">Linux enthusiasts i have added a few easter eggs take time to discover</span>
+            <h1 className="text-sm font-medium  opacity-70 tracking-wide">Get started by typing `help` command below</h1>
+            <span className=" text-xs capitalize font-medium opacity-70 ">Linux enthusiasts i have added a few easter eggs take time to discover</span>
+            <br />
+            <span className=" italic mb-3 text-xs font-medium opacity-60">Tip : Type any of my project name to navigate to their respective hosted links</span>
             {commands.map((command) => (
                 <div key={command.id} className="mt-2 flex  justify-between">
                     <div className=" w-full">
@@ -165,7 +181,7 @@ const Terminalcomp: React.FC = () => {
             <div className="flex justify-between items-center text-md">
                 <div className="w-full flex items-center gap-3">
                     <span className=" text-2xl font-bold">{">"}</span>
-                    <input type="text" value={input} onChange={handleInputChange} onKeyPress={(e) => input.length > 0 && handleKeyPress(e)} className="bg-transparent w-[80%] outline-none border-none focus:outline-none" />
+                    <input type="text" value={input} onChange={handleInputChange} onKeyPress={(e) => input.length > 0 && handleKeyPress(e)} className="bg-transparent w-[90%]  outline-none border-none focus:outline-none" />
                 </div>
                 <span className="text-sm opacity-60">{currentTime}</span>
             </div>
