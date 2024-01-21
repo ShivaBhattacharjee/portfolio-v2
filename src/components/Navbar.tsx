@@ -29,13 +29,13 @@ const navbarItems = [
 const Navbar = () => {
     const pathname = usePathname();
     return (
-        <nav className="sticky top-0">
+        <nav className="sticky top-0 z-50">
             {/* ipad & desktop navbar */}
             <section className="flex w-full justify-between items-center  m-auto p-2 mt-4 rounded-full">
-                <h1 className=" uppercase text-3xl font-bold tracking-widest relative">
+                <Link href={"/"} className=" uppercase text-3xl font-bold tracking-widest relative">
                     Shiva <span className=" text-blue-500 font-bold text-8xl absolute -bottom-2">.</span>{" "}
-                </h1>
-                <div className=" hidden md:flex gap-5 min-w-96 justify-center items-center border-2 border-white/30 bg-black/10 backdrop-blur-lg rounded-full p-2">
+                </Link>
+                <div className=" hidden lg:flex gap-5 min-w-96 justify-center items-center border-2 border-white/30 bg-black/10 backdrop-blur-lg rounded-full p-2">
                     {navbarItems.map((item) => {
                         const isActive = (pathname.includes(item.href) && item.href.length > 1) || pathname === item.href;
                         return (
