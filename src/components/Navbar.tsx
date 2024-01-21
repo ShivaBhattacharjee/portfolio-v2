@@ -3,6 +3,7 @@ import { Home, PersonStanding, Blocks, TerminalIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { usePathname, useRouter } from "next/navigation";
+import { ModeToggle } from "./ui/darkmodebtn";
 const navbarItems = [
     {
         name: "Home",
@@ -30,8 +31,11 @@ const Navbar = () => {
     return (
         <nav className="sticky top-0">
             {/* ipad & desktop navbar */}
-            <section className="hidden md:flex justify-center items-center  m-auto p-2 mt-4 rounded-full">
-                <div className="flex gap-5 min-w-96 justify-center items-center border-2 border-white/30 bg-black/40 backdrop-blur-lg rounded-full p-2">
+            <section className="flex w-full justify-between items-center  m-auto p-2 mt-4 rounded-full">
+                <h1 className=" uppercase text-3xl font-bold tracking-widest relative">
+                    Shiva <span className=" text-blue-500 font-bold text-8xl absolute -bottom-2">.</span>{" "}
+                </h1>
+                <div className=" hidden md:flex gap-5 min-w-96 justify-center items-center border-2 border-white/30 bg-black/10 backdrop-blur-lg rounded-full p-2">
                     {navbarItems.map((item) => {
                         const isActive = (pathname.includes(item.href) && item.href.length > 1) || pathname === item.href;
                         return (
@@ -41,17 +45,20 @@ const Navbar = () => {
                         );
                     })}
                 </div>
+                <ModeToggle />
             </section>
             {/* mobile navbar */}
-            <section className="fixed md:hidden rounded-t-lg flex flex-wrap gap-2 bg-black/40 justify-between items-center p-4 bottom-0 backdrop-blur-xl border-t-2 border-white/20 w-full">
-                {navbarItems.map((item) => {
-                    return (
-                        <Link key={item.name} href={item.href} className="flex text-center justify-center items-center flex-col gap-2">
-                            <item.icon />
-                            <span className="uppercase text-sm">{item.name}</span>
-                        </Link>
-                    );
-                })}
+            <section className="fixed md:hidden bottom-10 flex flex-wrap justify-center w-full">
+                <div className="border-black/10 dark:border-white/10 flex gap-3 flex-wrap items-center w-[75%] justify-between p-2 bg-black/20 backdrop-blur-lg border-2 rounded-full">
+                    {navbarItems.map((item) => {
+                        const isActive = (pathname.includes(item.href) && item.href.length > 1) || pathname === item.href;
+                        return (
+                            <Link key={item.name} href={item.href} className={` ${isActive && "bg-black dark:bg-white/10 rounded-full text-white dark:text-black"} p-2 text-black dark:text-white`}>
+                                <item.icon />
+                            </Link>
+                        );
+                    })}
+                </div>
             </section>
         </nav>
     );
