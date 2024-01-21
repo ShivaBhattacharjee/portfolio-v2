@@ -2,35 +2,19 @@
 import { TerminalSquare } from "lucide-react";
 import React, { useState, ChangeEvent, KeyboardEvent, useEffect } from "react";
 
+interface Command {
+    id: number;
+    input: string;
+    output: string;
+    time: string;
+}
+
 const Terminalcomp: React.FC = () => {
     const [input, setInput] = useState("");
     const [showHelp, setShowHelp] = useState(false);
-    const [currentTime, setCurrentTime] = useState(getFormattedTime());
+    const [commands, setCommands] = useState<Command[]>([]);
 
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            const intervalId = setInterval(() => {
-                setCurrentTime(getFormattedTime());
-            }, 1000);
-            return () => clearInterval(intervalId);
-        }
-    }, []);
-
-    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setInput(e.target.value);
-    };
-
-    const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === "Enter") {
-            if (input.toLowerCase() === "help") {
-                setShowHelp(true);
-            } else {
-                setShowHelp(false);
-            }
-        }
-    };
-
-    function getFormattedTime(): string {
+    const getFormattedTime = (): string => {
         const now = new Date();
         let hours = now.getHours();
         const minutes = now.getMinutes().toString().padStart(2, "0");
@@ -40,12 +24,45 @@ const Terminalcomp: React.FC = () => {
         hours = hours % 12 || 12;
 
         return `${hours}:${minutes}:${seconds}${amPm}`;
-    }
+    };
+
+    const [currentTime, setCurrentTime] = useState(getFormattedTime());
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCurrentTime(getFormattedTime());
+        }, 1000);
+
+        return () => clearInterval(intervalId);
+    }, []);
+
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setInput(e.target.value);
+    };
+
+    const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === "Enter") {
+            processCommand();
+        }
+    };
+
+    const processCommand = () => {
+        const newCommand: Command = {
+            id: Date.now(),
+            input,
+            time: getFormattedTime(),
+            output: `Output for command: ${input}`, // Replace this with actual command processing logic
+        };
+
+        setCommands((prevCommands) => [...prevCommands, newCommand]);
+        setInput("");
+        setShowHelp(false);
+    };
 
     return (
-        <div className="border-2 border-black/30 dark:border-white/30 rounded-lg h-[400px] p-4 overflow-y-auto w-full">
-            <div className="flex justify-between mb-5 items-center sticky top-0 dark:bg-black bg-white">
-                <div className="flex gap-3">
+        <div className="border-2 p-2 border-black/30 dark:border-white/30 rounded-lg h-[400px] overflow-y-auto w-full">
+            <div className="flex justify-between mb-5 items-center sticky top-0 dark:bg-black/20 z-20 backdrop-blur-lg bg-white">
+                <div className="flex gap-3" onClick={() => (window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ")}>
                     <div className="w-4 h-4 duration-200 cursor-pointer bg-red-500 rounded-full"></div>
                     <div className="w-4 h-4 duration-200 cursor-pointer bg-yellow-500 rounded-full"></div>
                     <div className="w-4 h-4 cursor-pointer duration-200 bg-green-500 rounded-full"></div>
@@ -56,16 +73,25 @@ const Terminalcomp: React.FC = () => {
                 </span>
             </div>
             <h1 className="text-sm font-medium mb-3 opacity-70 tracking-wide">Welcome to my website! Get started by typing `help` command below</h1>
-            <div>
-                <div className="flex justify-between items-center text-md">
-                    <div className="w-full">
-                        <span className="mr-4">{">"}</span>
-                        <input type="text" value={input} onChange={handleInputChange} onKeyPress={handleKeyPress} className="bg-transparent w-[80%] outline-none border-none focus:outline-none" />
+            {commands.map((command) => (
+                <div key={command.id} className="mt-2 flex  items-center justify-between">
+                    <div>
+                        <p className="text-md font-medium opacity-70 flex items-center gap-3">
+                            {" "}
+                            <span className=" text-green-500 font-bold text-2xl">{">"}</span> {command.input}
+                        </p>
+                        <p className="text-sm font-medium opacity-70">{`Output: ${command.output}`}</p>
                     </div>
-                    <span className=" text-sm opacity-60">{currentTime}</span>
+                    <span className="text-sm opacity-60">{command.time}</span>
                 </div>
+            ))}
+            <div className="flex justify-between items-center text-md">
+                <div className="w-full">
+                    <span className="mr-4 text-2xl font-bold">{">"}</span>
+                    <input type="text" value={input} onChange={handleInputChange} onKeyPress={handleKeyPress} className="bg-transparent w-[80%] outline-none border-none focus:outline-none" />
+                </div>
+                <span className="text-sm opacity-60">{currentTime}</span>
             </div>
-
             {/* Conditional rendering for help information */}
             {showHelp && (
                 <div className="mt-2 ">

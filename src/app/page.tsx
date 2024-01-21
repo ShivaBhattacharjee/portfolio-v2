@@ -63,7 +63,7 @@ const page = () => {
 
                 <div className="mt-12 lg:mt-28">
                     <div className="flex items-center gap-4 mb-3 text-3xl font-medium tracking-wide">
-                        <span className=" w-28 h-[2px] bg-green-500"></span> Terminal
+                        <span className=" w-14 h-[2px] bg-green-500"></span> Terminal
                     </div>
                     <Terminalcomp />
                 </div>
