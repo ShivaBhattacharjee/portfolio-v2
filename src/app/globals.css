@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.pin {
+    background: radial-gradient(at 27% 37%,
+            hsl(var(--primary)) 0px,
+            transparent 100%),
+        radial-gradient(at 97% 21%, hsl(var(--muted)) 0px, transparent 100%);
+}
