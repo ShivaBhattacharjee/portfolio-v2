@@ -14,7 +14,7 @@ const page = () => {
                     <Terminal size={17} />
                     Hello World
                 </span>
-                <h1 className="text-4xl relative lg:text-8xl font-bold ">
+                <h1 className="text-4xl relative md:text-7xl lg:text-8xl font-bold ">
                     Hey, I&apos;m Shiva <span className=" absolute bottom-0 text-8xl lg:text-[12rem] ml-2 animate-pulse">.</span>
                 </h1>
                 <h1 className=" font-bold lg:text-3xl">

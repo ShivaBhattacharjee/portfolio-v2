@@ -1,7 +1,7 @@
 {
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
-    "editor.fontSize": 16,
+    "editor.fontSize": 13,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "explicit",

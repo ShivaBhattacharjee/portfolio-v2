@@ -32,6 +32,26 @@ const Terminalcomp: React.FC = () => {
 
     const [currentTime, setCurrentTime] = useState(getFormattedTime());
 
+    const inputRef = useRef<HTMLInputElement | null>(null);
+
+    useEffect(() => {
+        if (inputRef.current) {
+            inputRef.current.focus();
+        }
+
+        const handleClickOutside = (e: MouseEvent) => {
+            if (inputRef.current && !inputRef.current.contains(e.target as Node)) {
+                inputRef.current.focus();
+            }
+        };
+
+        document.addEventListener("click", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("click", handleClickOutside);
+        };
+    }, []);
+
     useEffect(() => {
         const intervalId = setInterval(() => {
             setCurrentTime(() => getFormattedTime());
@@ -64,6 +84,9 @@ const Terminalcomp: React.FC = () => {
         switch (command) {
             case "hello":
                 output = "Yahallo! how can i help you??";
+                break;
+            case "sudo":
+                output = "missing parameters";
                 break;
             case "ls -a":
             case "ls":
@@ -185,7 +208,14 @@ const Terminalcomp: React.FC = () => {
                 <div className="flex font-mono justify-between items-center text-md">
                     <div className="w-full flex items-center gap-3">
                         <span className=" text-2xl font-bold">{">"}</span>
-                        <input type="text" value={input} onChange={handleInputChange} onKeyPress={(e) => input.length > 0 && handleKeyPress(e)} className="bg-transparent w-[90%]  outline-none border-none focus:outline-none" />
+                        <input
+                            type="text"
+                            ref={inputRef}
+                            value={input}
+                            onChange={handleInputChange}
+                            onKeyDown={(e) => handleKeyPress(e)} // Use onKeyDown instead of onKeyPress
+                            className="bg-transparent w-[90%] outline-none border-none focus:outline-none"
+                        />
                     </div>
                     <span className="text-sm opacity-60">{currentTime}</span>
                 </div>
