@@ -2,9 +2,12 @@
 
 import React, { useRef } from "react";
 import Image from "next/image";
+
 import ConnectionLine from "./connection-line";
+
+import { docker, git, go, mongodb, nextjs, nodejs, postgresssql, python, react, redux, rust, socketio, tailwind, ts } from "@/assets/index";
 import { cn } from "@/lib/utils";
-import { go, mongodb, mysql, redux, nextjs, nodejs, react, tailwind, ts, vercel, docker, rust, python, socketio, redis, git, postgresssql } from "@/assets/index";
+
 type TechBoxProps = {
     pinId: string;
     title: string;

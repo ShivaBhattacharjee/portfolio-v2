@@ -1,6 +1,7 @@
 "use client";
-import React, { useState, useLayoutEffect, useRef } from "react";
-import { motion, useAnimation, Variants } from "framer-motion";
+
+import React, { useLayoutEffect, useRef, useState } from "react";
+import { motion, useAnimation,Variants } from "framer-motion";
 
 type ConnectionLineProps = {
     div1Ref: React.RefObject<HTMLDivElement>;

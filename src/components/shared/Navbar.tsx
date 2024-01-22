@@ -1,9 +1,12 @@
 "use client";
-import { Home, PersonStanding, Blocks, TerminalIcon } from "lucide-react";
-import Link from "next/link";
+
 import React from "react";
-import { usePathname, useRouter } from "next/navigation";
-import { ModeToggle } from "./ui/darkmodebtn";
+import { Blocks, Home, PersonStanding, TerminalIcon } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+import { ModeToggle } from "../ui/darkmodebtn";
+
 const navbarItems = [
     {
         name: "Home",
@@ -39,7 +42,7 @@ const Navbar = () => {
                     {navbarItems.map((item) => {
                         const isActive = (pathname.includes(item.href) && item.href.length > 1) || pathname === item.href;
                         return (
-                            <Link href={item.href} key={item.name} className={`${isActive && "bg-white text-black"} flex items-center justify-center gap-2 uppercase hover:bg-white duration-200 ease-linear w-36  font-medium text-lg hover:text-black rounded-full p-2 text-center `}>
+                            <Link href={item.href} key={item.name} className={`${isActive && "bg-white text-black"} flex items-center justify-center gap-2 uppercase hover:bg-white duration-200 ease-linear w-36  font-medium hover:text-black rounded-full p-2 text-center `}>
                                 <item.icon /> {item.name}
                             </Link>
                         );

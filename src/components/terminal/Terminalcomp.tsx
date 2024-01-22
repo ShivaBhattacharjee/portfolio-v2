@@ -1,8 +1,10 @@
 "use client";
+
+import React, { ChangeEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
 import { TerminalSquare } from "lucide-react";
-import React, { useState, ChangeEvent, KeyboardEvent, useEffect, useRef } from "react";
-import HelpCommand from "./HelpCommand";
 import { useRouter } from "next/navigation";
+
+import HelpCommand from "./HelpCommand";
 
 interface Command {
     id: number;
@@ -32,7 +34,7 @@ const Terminalcomp: React.FC = () => {
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-            setCurrentTime(getFormattedTime());
+            setCurrentTime(() => getFormattedTime());
         }, 1000);
 
         return () => clearInterval(intervalId);
@@ -150,40 +152,43 @@ const Terminalcomp: React.FC = () => {
     };
 
     return (
-        <div ref={terminalRef} className="border-2 p-2 border-black/30 dark:border-white/30 rounded-lg h-[500px] lg:h-[400px] overflow-y-auto w-full">
-            <div className="flex justify-between mb-5 items-center sticky top-0 dark:bg-black/20 z-20 backdrop-blur-lg bg-white">
-                <div className="flex gap-3" onClick={() => (window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ")}>
-                    <div className="w-4 h-4 duration-200 cursor-pointer bg-red-500 rounded-full"></div>
-                    <div className="w-4 h-4 duration-200 cursor-pointer bg-yellow-500 rounded-full"></div>
-                    <div className="w-4 h-4 cursor-pointer duration-200 bg-green-500 rounded-full"></div>
+        <div ref={terminalRef} className="border-2  border-black/30 dark:border-white/30 rounded-lg h-[450px] overflow-y-auto w-full">
+            <div className="flex p-2 justify-between mb-5 items-center sticky top-0 dark:bg-black/40 z-20 backdrop-blur-lg bg-white/40">
+                <div className="flex gap-2" onClick={() => (window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ")}>
+                    <div className="w-3 h-3 duration-200 cursor-pointer bg-red-500 rounded-full"></div>
+                    <div className="w-3 h-3 duration-200 cursor-pointer bg-yellow-500 rounded-full"></div>
+                    <div className="w-3 h-3 cursor-pointer duration-200 bg-green-500 rounded-full"></div>
                 </div>
-                <span className="border flex gap-3 font-medium text-sm border-white/30 rounded-lg p-2 justify-center items-center">
-                    <TerminalSquare size={20} />
-                    Zsh
+                <h1>Terminal</h1>
+                <span className="border flex gap-1 font-medium text-sm border-white/30 rounded-lg p-2 justify-center items-center">
+                    <TerminalSquare size={17} />
+                    zsh
                 </span>
             </div>
-            <h1 className="text-sm font-medium  opacity-70 tracking-wide">Get started by typing `help` command below</h1>
-            <span className=" text-xs capitalize font-medium opacity-70 ">Linux enthusiasts i have added a few easter eggs take time to discover</span>
-            <br />
-            <span className=" italic mb-3 text-xs font-medium opacity-60">Tip : Type any of my project name to navigate to their respective hosted links</span>
-            {commands.map((command) => (
-                <div key={command.id} className="mt-2 flex  justify-between">
-                    <div className=" w-full">
-                        <p className="text-md font-medium opacity-70 flex items-center gap-3 w-full">
-                            {" "}
-                            <span className=" text-green-500 font-bold text-2xl">{">"}</span> {command.input}
-                        </p>
-                        <p className="text-sm w-full font-medium opacity-70">{command.output}</p>
+            <div className="p-2">
+                <h1 className="text-sm font-medium  opacity-70 tracking-wide">Get started by typing `help` command below</h1>
+                <span className=" text-xs capitalize font-medium opacity-70 ">Linux enthusiasts i have added a few easter eggs take time to discover</span>
+                <br />
+                <span className=" italic mb-3 text-xs font-medium opacity-60">Tip : Type any of my project name to navigate to their respective hosted links</span>
+                {commands.map((command) => (
+                    <div key={command.id} className="mt-2 font-mono flex  justify-between" suppressHydrationWarning>
+                        <div className=" w-full">
+                            <p className="text-md font-medium opacity-70 flex items-center gap-3 w-full">
+                                {" "}
+                                <span className=" text-green-500 font-bold text-2xl">{">"}</span> {command.input}
+                            </p>
+                            <p className="text-sm w-full font-medium opacity-70">{command.output}</p>
+                        </div>
+                        <span className="text-sm opacity-60">{command.time}</span>
                     </div>
-                    <span className="text-sm opacity-60">{command.time}</span>
+                ))}
+                <div className="flex font-mono justify-between items-center text-md">
+                    <div className="w-full flex items-center gap-3">
+                        <span className=" text-2xl font-bold">{">"}</span>
+                        <input type="text" value={input} onChange={handleInputChange} onKeyPress={(e) => input.length > 0 && handleKeyPress(e)} className="bg-transparent w-[90%]  outline-none border-none focus:outline-none" />
+                    </div>
+                    <span className="text-sm opacity-60">{currentTime}</span>
                 </div>
-            ))}
-            <div className="flex justify-between items-center text-md">
-                <div className="w-full flex items-center gap-3">
-                    <span className=" text-2xl font-bold">{">"}</span>
-                    <input type="text" value={input} onChange={handleInputChange} onKeyPress={(e) => input.length > 0 && handleKeyPress(e)} className="bg-transparent w-[90%]  outline-none border-none focus:outline-none" />
-                </div>
-                <span className="text-sm opacity-60">{currentTime}</span>
             </div>
         </div>
     );
