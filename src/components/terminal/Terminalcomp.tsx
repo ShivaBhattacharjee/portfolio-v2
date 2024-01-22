@@ -32,33 +32,35 @@ const Terminalcomp: React.FC = () => {
 
     const [currentTime, setCurrentTime] = useState(getFormattedTime());
 
+    const [autoFocus, setAutoFocus] = useState(false);
     const inputRef = useRef<HTMLInputElement | null>(null);
 
     useEffect(() => {
-        if (inputRef.current) {
-            inputRef.current.focus();
-        }
-
-        const handleClickOutside = (e: MouseEvent) => {
-            if (inputRef.current && !inputRef.current.contains(e.target as Node)) {
-                inputRef.current.focus();
+        const handleScroll = () => {
+            if (window.scrollY > 200) {
+                setAutoFocus(true);
+                window.removeEventListener("scroll", handleScroll);
             }
         };
 
-        document.addEventListener("click", handleClickOutside);
+        window.addEventListener("scroll", handleScroll);
 
         return () => {
-            document.removeEventListener("click", handleClickOutside);
+            window.removeEventListener("scroll", handleScroll);
         };
     }, []);
 
     useEffect(() => {
+        if (autoFocus && inputRef.current) {
+            inputRef.current.focus();
+        }
+
         const intervalId = setInterval(() => {
             setCurrentTime(() => getFormattedTime());
         }, 1000);
 
         return () => clearInterval(intervalId);
-    }, []);
+    }, [autoFocus]);
 
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         setInput(e.target.value);
