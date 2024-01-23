@@ -51,7 +51,7 @@ const Navbar = () => {
                 <ModeToggle />
             </section>
             {/* mobile navbar */}
-            <section className="fixed z-50 md:hidden bottom-10 flex flex-wrap justify-center w-full">
+            <section className="fixed z-50 md:hidden bottom-10 left-0 right-0 flex flex-wrap justify-center w-full">
                 <div className="border-black/10 dark:border-white/10 flex gap-3 flex-wrap items-center w-[75%] justify-between p-2 bg-black/20 dark:bg-white/5 backdrop-blur-lg border-2 rounded-full">
                     {navbarItems.map((item) => {
                         const isActive = (pathname.includes(item.href) && item.href.length > 1) || pathname === item.href;
