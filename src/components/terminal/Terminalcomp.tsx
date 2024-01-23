@@ -37,7 +37,7 @@ const Terminalcomp: React.FC = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 200) {
+            if (window.scrollY > 768 && window.innerWidth > 768 ? 200 : 40) {
                 setAutoFocus(true);
                 window.removeEventListener("scroll", handleScroll);
             }
@@ -69,13 +69,6 @@ const Terminalcomp: React.FC = () => {
     const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.key === "Enter") {
             processCommand();
-            scrollTerminalToBottom();
-        }
-    };
-
-    const scrollTerminalToBottom = () => {
-        if (terminalRef.current) {
-            terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
         }
     };
 
@@ -116,6 +109,17 @@ const Terminalcomp: React.FC = () => {
             case "proj":
                 router.push("/projects");
                 output = "";
+                break;
+            case "proj ls":
+                output = (
+                    <ul>
+                        <li>Animetrix</li>
+                        <li>Vermilion</li>
+                        <li>Muxik</li>
+                        <li>Quibble</li>
+                        <li>Synthia</li>
+                    </ul>
+                );
                 break;
             case "help":
                 output = <HelpCommand />;
@@ -175,9 +179,12 @@ const Terminalcomp: React.FC = () => {
         setCommands((prevCommands) => [...prevCommands, newCommand]);
         setInput("");
     };
+    useEffect(() => {
+        terminalRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, [commands]);
 
     return (
-        <div ref={terminalRef} className="border-2  border-black/30 dark:border-white/30 rounded-lg h-[450px] overflow-y-auto w-full">
+        <div className="border-2  border-black/30 dark:border-white/30 rounded-lg h-[450px] overflow-y-auto w-full">
             <div className="flex p-2 justify-between mb-5 items-center sticky top-0 dark:bg-black/40 z-20 backdrop-blur-lg bg-white/40">
                 <div className="flex gap-2" onClick={() => (window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ")}>
                     <div className="w-3 h-3 duration-200 cursor-pointer bg-red-500 rounded-full"></div>
@@ -196,13 +203,13 @@ const Terminalcomp: React.FC = () => {
                 <br />
                 <span className=" italic mb-3 text-xs font-medium opacity-60">Tip : Type any of my project name to navigate to their respective hosted links</span>
                 {commands.map((command) => (
-                    <div key={command.id} className="mt-2 font-mono flex  justify-between" suppressHydrationWarning>
+                    <div ref={terminalRef} key={command.id} className="mt-2 font-mono flex  justify-between" suppressHydrationWarning>
                         <div className=" w-full">
-                            <p className="text-md font-medium opacity-70 flex items-center gap-3 w-full">
+                            <div className="text-md font-medium opacity-70 flex items-center gap-3 w-full">
                                 {" "}
                                 <span className=" text-green-500 font-bold text-2xl">{">"}</span> {command.input}
-                            </p>
-                            <p className="text-sm w-full font-medium opacity-70">{command.output}</p>
+                            </div>
+                            <span className="text-sm w-full font-medium opacity-70">{command.output}</span>
                         </div>
                         <span className="text-sm opacity-60">{command.time}</span>
                     </div>
@@ -210,14 +217,7 @@ const Terminalcomp: React.FC = () => {
                 <div className="flex font-mono justify-between items-center text-md">
                     <div className="w-full flex items-center gap-3">
                         <span className=" text-2xl font-bold">{">"}</span>
-                        <input
-                            type="text"
-                            ref={inputRef}
-                            value={input}
-                            onChange={handleInputChange}
-                            onKeyDown={(e) => handleKeyPress(e)} // Use onKeyDown instead of onKeyPress
-                            className="bg-transparent w-[90%] outline-none border-none focus:outline-none"
-                        />
+                        <input type="text" ref={inputRef} value={input} onChange={handleInputChange} onKeyDown={(e) => handleKeyPress(e)} className="bg-transparent w-[90%] outline-none border-none focus:outline-none" />
                     </div>
                     <span className="text-sm opacity-60">{currentTime}</span>
                 </div>

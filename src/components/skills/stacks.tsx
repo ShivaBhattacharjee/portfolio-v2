@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import ConnectionLine from "./connection-line";
 
-import { docker, git, go, mongodb, nextjs, nodejs, postgresssql, python, react, redux, rust, socketio, tailwind, ts } from "@/assets/index";
+import { docker, git, go, mongodb, nextjs, nodejs, postgresssql, python, react, redux, rust, socketio, tailwind, ts } from "@/assets/skills/index";
 import { cn } from "@/lib/utils";
 
 type TechBoxProps = {

@@ -32,7 +32,7 @@ const navbarItems = [
 const Navbar = () => {
     const pathname = usePathname();
     return (
-        <nav className="z-50 lg:sticky lg:top-0">
+        <nav className="z-50 lg:sticky max-w-[90%] m-auto lg:top-0">
             {/* ipad & desktop navbar */}
             <section className="flex w-full justify-between items-center  m-auto p-2 rounded-full">
                 <Link href={"/"} className=" uppercase text-3xl font-bold tracking-widest relative">
