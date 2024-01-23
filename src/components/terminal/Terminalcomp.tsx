@@ -67,6 +67,7 @@ const Terminalcomp: React.FC = () => {
     };
 
     const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
+        e.preventDefault();
         if (e.key === "Enter") {
             processCommand();
         }
@@ -214,11 +215,11 @@ const Terminalcomp: React.FC = () => {
                         <span className="text-sm opacity-60">{command.time}</span>
                     </div>
                 ))}
-                <div className="flex font-mono justify-between items-center text-md">
-                    <div className="w-full flex items-center gap-3">
+                <div onSubmit={handleKeyPress} className="flex font-mono justify-between items-center text-md">
+                    <form className="w-full flex items-center gap-3">
                         <span className=" text-2xl font-bold">{">"}</span>
                         <input type="text" ref={inputRef} value={input} onChange={handleInputChange} onKeyDown={(e) => handleKeyPress(e)} className="bg-transparent w-[90%] outline-none border-none focus:outline-none" />
-                    </div>
+                    </form>
                     <span className="text-sm opacity-60">{currentTime}</span>
                 </div>
             </div>
