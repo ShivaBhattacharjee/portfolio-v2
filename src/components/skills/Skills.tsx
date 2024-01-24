@@ -8,7 +8,7 @@ const Skills = () => {
     return (
         <div className=" mt-8 w-full flex md:justify-center md:items-center md:text-center flex-col lg:mt-28">
             <h1 className=" text-4xl flex gap-2 items-center tracking-wide lg:text-7xl font-bold  md:border-b-2 ">
-                <Pi className=" opacity-70 lg:w-12 lg:h-12" /> Skills
+                <Pi className=" opacity-70 lg:w-12 lg:h-12" /> Skills <span className=" w-14 h-[2px] bg-green-500"></span>
             </h1>
             <p className=" mt-2 lg:mt-7 text-sm md:text-lg opacity-70 font-medium uppercase tracking-widest ">Crafting full stack web apps using M.E.R.N stack</p>
             <div className=" md:hidden mt-4 flex gap-2 flex-wrap">

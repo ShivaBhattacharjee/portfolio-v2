@@ -3,6 +3,7 @@ import { GitHubLogoIcon, GlobeIcon, InstagramLogoIcon, TwitterLogoIcon } from "@
 import { MailPlus, MouseIcon, Terminal } from "lucide-react";
 import Link from "next/link";
 
+import Contact from "@/components/shared/Contact";
 import Skills from "@/components/skills/Skills";
 import Terminalcomp from "@/components/terminal/Terminalcomp";
 import TypingAnimation from "@/components/TypingAnimation";
@@ -78,25 +79,7 @@ const page = () => {
                     </div>
                     <h1>TODO</h1>
                 </div>
-
-                <div className="flex justify-center items-center gap-4 flex-col" id="contact">
-                    <h1 className=" capitalize font-bold text-4xl relative lg:text-6xl tracking-wide">
-                        Contact Me <span className="  text-8xl lg:text-[9rem] animate-pulse absolute lg:-bottom-2 bottom-0">.</span>
-                    </h1>
-                    <span className=" font-normal text-sm md:text-lg text-center">
-                        Shoot me an email if you want to connect! You can also find me on{" "}
-                        <a className=" text-blue-500 font-bold" href="https://twitter.com/sh17va" target="_blank">
-                            Twitter
-                        </a>{" "}
-                        if that&apos;s more your speed.
-                    </span>
-
-                    <div className="flex justify-center items-center flex-wrap gap-3 w-full">
-                        <input type="text" placeholder="Please Enter Your Full Name" className=" flex-1 border-2 duration-300 rounded-lg p-3 dark:border-white/40 border-black/40 bg-transparent" />
-                        <input type="email" placeholder="Please Enter Your Email" className=" flex-1 border-2 duration-200 rounded-lg p-3 dark:border-white/40 border-black/40 bg-transparent" />
-                    </div>
-                    <textarea placeholder="Enter Your Message" className=" bg-transparent h-64 dark:border-white/40 border-black/40 p-4 rounded-lg w-full flex-auto  border"></textarea>
-                </div>
+                <Contact />
             </div>
         </section>
     );
