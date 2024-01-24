@@ -80,6 +80,10 @@ const Terminalcomp: React.FC = () => {
             case "hello":
                 output = "Yahallo! how can i help you??";
                 break;
+            case "raj":
+                output = "";
+                window.location.href = "https://www.youtube.com/shorts/u2O1g-BEZuo";
+                break;
             case "sudo":
                 output = "missing parameters";
                 break;
