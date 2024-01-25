@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
+import { Cpu } from "lucide-react";
 import Image from "next/image";
 
 import ConnectionLine from "./connection-line";
@@ -73,14 +74,17 @@ export const TechStack = () => {
             {renderTechBoxes(techs.stage2, "stage2", refs.stage2.techbox)}
             {renderTechBoxes(techs.stage3, "stage3", refs.stage3.techbox)}
             {renderTechBoxes(techs.stage4, "stage4", refs.stage4.techbox)}
-            <div id="cpu" className="absolute w-40 h-20 rounded-2xl border flex justify-center items-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-muted z-20">
+            <div id="cpu" className="absolute w-40 h-20 rounded-2xl  flex justify-center items-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-muted z-20">
                 {renderPins(5, "stage1", refs.stage1.pins)}
                 {renderPins(2, "stage2", refs.stage2.pins)}
                 {renderPins(2, "stage3", refs.stage3.pins)}
                 {renderPins(5, "stage4", refs.stage4.pins)}
 
-                <div id="placeholder" className="absolute w-40 h-20 rounded-2xl border flex justify-center items-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-muted z-20">
-                    <h1 className="font-bold uppercase primary-gradient">Tech Stack</h1>
+                <div id="placeholder" className=" absolute w-[10rem] flex h-20 rounded-2xl border-2 dark:border-white/40 border-black/40  justify-center items-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-muted z-20">
+                    <h1 className="font-bold uppercase flex items-center gap-2 tracking-wider">
+                        <Cpu />
+                        Tech Stack
+                    </h1>
                 </div>
             </div>
             {Object.keys(refs).map((key) => {
