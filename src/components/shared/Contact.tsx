@@ -4,9 +4,10 @@ import { ScaleLoader } from "react-spinners";
 import emailjs from "@emailjs/browser";
 import { MailPlus, Nfc } from "lucide-react";
 
-import Toast from "@/utils/toast";
+import { useToast } from "@/components/ui/use-toast";
 
 const Contact = () => {
+    const { toast } = useToast();
     const [message, setMessage] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(false);
     const form = useRef<HTMLFormElement>(null);
@@ -17,12 +18,19 @@ const Contact = () => {
         try {
             setLoading(true);
             await emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICE_ID!, process.env.NEXT_PUBLIC_TEMPLATE_ID!, form.current!, process.env.NEXT_PUBLIC_PUBLIC_KEY);
-            Toast.SuccessshowToast("Message Sent, I will get back to you shortly");
+            toast({
+                title: "Email Sent",
+                description: "Your message has been sent successfully",
+            });
             setMessage("");
             form.current!.reset();
         } catch (error) {
             setLoading(false);
-            Toast.ErrorShowToast("An error occurred, Please try again");
+            toast({
+                variant: "destructive",
+                title: "Uh oh! An error occurred",
+                description: "There was a problem sending your message. Please try again later.",
+            });
             console.error("An error occurred:", error);
         } finally {
             setLoading(false);
@@ -55,7 +63,7 @@ const Contact = () => {
                 <textarea placeholder="Enter Your Message" className=" bg-transparent h-64 dark:border-white/40 border-black/40 p-4 rounded-lg w-full flex-auto  border-2" required autoComplete="false" name="message" value={message} onChange={handleMessageChange}></textarea>
                 {loading ? (
                     <button className="flex justify-center items-center boxshadowbtn gap-3 " disabled>
-                        <ScaleLoader color="#808080" className=" scale-75" /> Sending.....
+                        <ScaleLoader color="#808080" className=" scale-50" /> Processing.....
                     </button>
                 ) : (
                     <button className="flex justify-center items-center gap-3 boxshadowbtn">
