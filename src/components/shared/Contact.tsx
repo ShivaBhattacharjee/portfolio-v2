@@ -54,11 +54,11 @@ const Contact = () => {
                 </div>
                 <textarea placeholder="Enter Your Message" className=" bg-transparent h-64 dark:border-white/40 border-black/40 p-4 rounded-lg w-full flex-auto  border-2" required autoComplete="false" name="message" value={message} onChange={handleMessageChange}></textarea>
                 {loading ? (
-                    <button className="flex justify-center items-center gap-3 bg-black/80 hover:border-black/8 hover:text-black border-2 hover:bg-transparent hover:dark:bg-transparent hover:dark:text-white hover:dark:border-white duration-200 dark:bg-white text-white dark:text-black w-full lg:w-1/2 lg:m-auto p-3 text-xl font-medium rounded-lg" disabled>
-                        <ScaleLoader color="#3b82f6" className=" scale-75" /> Sending.....
+                    <button className="flex justify-center items-center boxshadowbtn gap-3 " disabled>
+                        <ScaleLoader color="#808080" className=" scale-75" /> Sending.....
                     </button>
                 ) : (
-                    <button className="flex justify-center items-center gap-3 bg-black/80 hover:border-black/8 hover:text-black border-2 hover:bg-transparent hover:dark:bg-transparent hover:dark:text-white hover:dark:border-white duration-200 dark:bg-white text-white dark:text-black w-full lg:w-1/2 lg:m-auto p-3 text-xl font-medium rounded-lg">
+                    <button className="flex justify-center items-center gap-3 boxshadowbtn">
                         <Nfc />
                         Contact
                     </button>

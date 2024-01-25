@@ -17,3 +17,45 @@
 html {
     scroll-behavior: smooth;
 }
+
+.boxshadowbtn {
+    padding: 12px;
+    width: 50%;
+    margin: auto;
+    box-shadow: 10px 10px #808080;
+    border: 2px solid #808080 !important;
+    transition: all ease-in 0.2s !important;
+}
+
+.homepagecontactbtn {
+    padding: 18px;
+    display: flex;
+    gap: 10px;
+    outline: none;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    box-shadow: 10px 10px #808080;
+    border: 2px solid #808080 !important;
+    transition: all ease-in 0.2s !important;
+    margin-right: 10px;
+}
+
+@media(max-width: 768px) {
+    .homepagecontactbtn {
+        padding: 12px;
+        width: 40%;
+    }
+
+    .boxshadowbtn {
+        width: 100%;
+    }
+}
+
+.boxshadowbtn:hover,
+.homepagecontactbtn:hover {
+    box-shadow: none;
+    transform: translateY(4px) !important;
+    transition: all ease-in 0.2s;
+    opacity: 1 !important;
+}

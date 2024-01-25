@@ -26,7 +26,7 @@ const page = () => {
                     I develop open-source <span className="  text-blue-500 uppercase font-bold">full-stack</span> apps/tools and occasionally take on <span className=" uppercase text-blue-500 font-bold tracking-wider">freelance</span> projects.
                 </p>
                 <div className="flex items-center gap-3 lg:gap-6 flex-wrap">
-                    <Link href={"#contact"} className="rounded-lg hover:bg-black hover:dark:bg-white duration-200 hover:text-white hover:dark:text-black w-32 lg:w-48 lg:text-2xl p-2 lg:pl-5 lg:pr-5 font-medium border-2 border-black/40 dark:border-white/40 flex justify-center items-center gap-2">
+                    <Link href={"#contact"} className="homepagecontactbtn">
                         <GlobeIcon className=" lg:w-6 h-6" />
                         Contact
                     </Link>
