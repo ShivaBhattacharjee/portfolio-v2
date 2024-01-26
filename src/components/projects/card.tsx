@@ -20,7 +20,7 @@ const Card: React.FC<CardProps> = ({ item, index }) => {
         <div key={item.name} className={`border-2 p-3 dark:border-white/40 border-neutral-600  rounded-lg ${index % 2 != 0 ? "rotate-1" : " rotate-1"}`}>
             <div className="flex justify-between items-center">
                 <Image src={item?.image} alt={item.name} height={100} className=" w-16 h-16 rounded-full" width={200}></Image>
-                <div className="flex gap-5 items-center">
+                <div className="flex gap-3 flex-wrap items-center">
                     <span className=" text-xs rounded-full font-semibold dark:text-white text-black w-24 text-center p-1 dark:bg-white/20 bg-black/20 capitalize">{item.type}</span>
                     {item.githubLink && (
                         <Link href={item.githubLink} target="_blank" rel="noopener noreferrer">

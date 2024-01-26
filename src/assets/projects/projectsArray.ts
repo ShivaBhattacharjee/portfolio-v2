@@ -5,7 +5,7 @@ import synthiaimg from "./synthia.webp";
 export const projectArray = [
     {
         name: "Animetrix",
-        description: "Anime Trix is an anime streaming / downloading site that offers a vast collection of anime shows for streaming and downloading. With a user-friendly interface, you can easily find your favorite anime shows and watch them in high-definition quality.",
+        description: "Anime Trix is a full stack anime streaming / downloading site developed in NEXTJS 13.5 and TYPESCRIPT that offers a vast collection of anime shows for streaming and downloading. With a user-friendly interface, you can easily find your favorite anime shows and watch them in high-definition quality.",
         image: animetriximg,
         type: "open source",
         hostedLink: "https://animetrix.xyz",
@@ -20,6 +20,14 @@ export const projectArray = [
         githubLink: "https://www.github.com/shivabhattacharjee/muxik",
     },
     {
+        name: "Muxik - CURD API",
+        description: "Backend API for muxik developed on NodeJs, ExpressJs, and MongoDB. It allows user to register, login, create, read, update, and delete songs, albums, playlists, and artists. It also allows user to upload and delete songs, albums, playlists, and artists.",
+        image: muxikimg,
+        type: "open source",
+        hostedLink: "",
+        githubLink: "https://www.github.com/shivabhattacharjee/muxik-backend",
+    },
+    {
         name: "Synthia",
         description: "Synthia is a lightweight and beginner-friendly interpreted programming language developed in Rust. With a simple, intuitive syntax and a focus on ease of use, Synthia is perfect for both newcomers to programming and experienced developers looking for a flexible scripting language",
         image: synthiaimg,
@@ -29,7 +37,7 @@ export const projectArray = [
     },
     {
         name: "Quibble",
-        description: "Quibble, a content generation bot, simplifies and elevates your creative process. Whether crafting engaging blog posts, soulful song lyrics, or attention-grabbing Insta captions, Quibble's advanced algorithms seamlessly transform your ideas into polished, professional content.",
+        description: "Quibble, a content generation bot, simplifies and elevates your creative process developed in NEXTJS 14 and TYPESCRIPT. Whether crafting engaging blog posts, soulful song lyrics, or attention-grabbing Insta captions, Quibble's advanced algorithms seamlessly transform your ideas into polished, professional content.",
         image: quibbleimg,
         type: "open source",
         hostedLink: "https://quibbleai.vercel.app",
