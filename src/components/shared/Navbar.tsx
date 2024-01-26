@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Home, PersonStanding, TerminalIcon } from "lucide-react";
+import { Home, Info, TerminalIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -21,7 +21,7 @@ const navbarItems = [
     {
         name: "About",
         href: "/about",
-        icon: PersonStanding,
+        icon: Info,
     },
 ];
 const Navbar = () => {

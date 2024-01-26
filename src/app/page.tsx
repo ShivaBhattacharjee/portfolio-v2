@@ -1,6 +1,6 @@
 import React from "react";
-import { GitHubLogoIcon, GlobeIcon, InstagramLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
-import { ChevronRight, MailPlus, MouseIcon, Terminal } from "lucide-react";
+import { GitHubLogoIcon, InstagramLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
+import { ChevronRight, Info, MailPlus, MouseIcon, Terminal } from "lucide-react";
 import Link from "next/link";
 
 import { projectArray } from "@/assets/projects/projectsArray";
@@ -28,9 +28,9 @@ const page = () => {
                     I develop open-source <span className="  text-blue-500 uppercase font-bold">full-stack</span> apps/tools and occasionally take on <span className=" uppercase text-blue-500 font-bold tracking-wider">freelance</span> projects.
                 </p>
                 <div className="flex items-center gap-3 lg:gap-6 flex-wrap">
-                    <Link href={"#contact"} className="homepagecontactbtn">
-                        <GlobeIcon className=" lg:w-6 h-6" />
-                        Contact
+                    <Link href={"/about"} className="homepagecontactbtn">
+                        <Info className=" lg:w-6 h-6" />
+                        About Me
                     </Link>
                     <a href="https://github.com/shivabhattacharjee" target="_blank" rel="noopener noreferrer">
                         <GitHubLogoIcon className=" h-6 lg:h-10 w-8 lg:w-8 duration-200 hover:-translate-y-2 cursor-pointer" />
@@ -74,18 +74,11 @@ const page = () => {
                                     <Card item={item} index={index} key={index} />
                                 ))}
                         </div>
-                        <Link href={"/projects"} className="loadmorebtn text-center">
+                        <Link href={"/projects"} className="loadmorebtn text-center lg:mb-8">
                             Load More
                             <ChevronRight />
                         </Link>
                     </div>
-                </div>
-                {/* about me */}
-                <div className="mt-12 lg:mt-28">
-                    <div className="flex items-center gap-4 mb-3 text-3xl font-medium tracking-wide">
-                        <span className=" w-14 h-[2px] bg-green-500"></span> About Me
-                    </div>
-                    <h1>TODO</h1>
                 </div>
                 <Contact />
             </div>

@@ -1,7 +1,4 @@
-import animetriximg from "./animetrix.jpeg";
-import muxikimg from "./muxik.png";
-import quibbleimg from "./quibble.jpeg";
-import synthiaimg from "./synthia.webp";
+import { animetriximg, muxikimg, quibbleimg,synthiaimg } from ".";
 export const projectArray = [
     {
         name: "Animetrix",
