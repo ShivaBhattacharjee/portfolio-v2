@@ -1,17 +1,25 @@
 import React from "react";
+import Image from "next/image";
 export function generateMetadata() {
     return {
         title: "Projects - Shiva",
     };
 }
+import reactmemoji from "@/assets/projects/memoji.svg";
+import { projectArray } from "@/assets/projects/projectsArray";
+import workscribble from "@/assets/projects/work-scribble.svg";
+import Card from "@/components/projects/card";
 const Projects = () => {
     return (
-        <div className=" lg:max-w-[50%] lg:m-auto min-h-screen ">
-            <div className="flex p-5 flex-col">
-                <h1 className=" font-bold text-3xl lg:text-5xl lg:mt-8 capitalize tracking-wide">Nice stuff I&apos;ve built</h1>
+        <div className=" lg:max-w-[50%] lg:m-auto min-h-screen overflow-hidden ">
+            <div className="flex w-full justify-between items-center pr-3 ">
+                <Image src={workscribble} height={300} width={300} alt="work-scribble" priority className=" lg:mt-6" />
+                <Image src={reactmemoji} height={140} width={140} alt="reaction-memoji" className=" fill-black dark:fill-white"></Image>
+            </div>
+            <div className="flex pl-4 pr-4 flex-col pb-7 md:pb-0">
                 <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {[1, 2, 3, 4, 5].map((item, index) => (
-                        <div key={item} className={`border-2 dark:border-white/40 border-neutral-600 h-44 rounded-lg ${index % 2 != 0 ? "rotate-1" : " rotate-1"}`}></div>
+                    {projectArray.map((item, index) => (
+                        <Card item={item} index={index} key={index} />
                     ))}
                 </div>
             </div>

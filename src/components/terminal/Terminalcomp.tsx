@@ -37,7 +37,7 @@ const Terminalcomp: React.FC = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 768 && window.innerWidth > 768 ? 200 : 40) {
+            if (window.scrollY > 768 && window.innerWidth > 768 ? 300 : 300) {
                 setAutoFocus(true);
                 window.removeEventListener("scroll", handleScroll);
             }
@@ -195,7 +195,7 @@ const Terminalcomp: React.FC = () => {
                     <div className="w-3 h-3 duration-200 cursor-pointer bg-yellow-500 rounded-full"></div>
                     <div className="w-3 h-3 cursor-pointer duration-200 bg-green-500 rounded-full"></div>
                 </div>
-                <h1>Terminal</h1>
+                <h1>theshiva.xyz</h1>
                 <span className="border flex gap-1 font-medium text-sm border-white/30 rounded-lg p-2 justify-center items-center">
                     <TerminalSquare size={17} />
                     zsh

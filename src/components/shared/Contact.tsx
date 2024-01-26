@@ -52,7 +52,7 @@ const Contact = () => {
                 </a>{" "}
                 if that&apos;s more your speed.
             </span>
-            <a href="mailto:itsshivahere@outlook.com?body=Hello" className="flex items-center gap-2 text-2xl font-medium">
+            <a href="mailto:itsshivahere@outlook.com?body=Hello" target="_blank" className="flex items-center gap-2 text-xl font-medium">
                 <MailPlus /> itsshivahere@outlook.com
             </a>
             <form className="flex flex-col gap-4" autoComplete="off" ref={form} onSubmit={sendEmail}>

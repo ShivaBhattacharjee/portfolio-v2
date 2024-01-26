@@ -1,8 +1,10 @@
 import React from "react";
 import { GitHubLogoIcon, GlobeIcon, InstagramLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
-import { MailPlus, MouseIcon, Terminal } from "lucide-react";
+import { ChevronRight, MailPlus, MouseIcon, Terminal } from "lucide-react";
 import Link from "next/link";
 
+import { projectArray } from "@/assets/projects/projectsArray";
+import Card from "@/components/projects/card";
 import Contact from "@/components/shared/Contact";
 import Skills from "@/components/skills/Skills";
 import Terminalcomp from "@/components/terminal/Terminalcomp";
@@ -63,19 +65,25 @@ const page = () => {
                     <div className="flex items-center gap-4 mb-3 text-3xl font-medium tracking-wide">
                         <span className=" w-14 h-[2px] bg-green-500"></span> Projects
                     </div>
-                    <h1>TODO</h1>
+
+                    <div className="flex gap-8 w-full justify-center items-center pl-4 pr-4 flex-col pb-7 md:pb-0">
+                        <div className="mt-6 relative grid grid-cols-1 md:grid-cols-2 gap-8">
+                            {projectArray
+                                .filter((_, index) => index === 0 || index === 2)
+                                .map((item, index) => (
+                                    <Card item={item} index={index} key={index} />
+                                ))}
+                        </div>
+                        <Link href={"/projects"} className="loadmorebtn text-center">
+                            Load More
+                            <ChevronRight />
+                        </Link>
+                    </div>
                 </div>
                 {/* about me */}
                 <div className="mt-12 lg:mt-28">
                     <div className="flex items-center gap-4 mb-3 text-3xl font-medium tracking-wide">
                         <span className=" w-14 h-[2px] bg-green-500"></span> About Me
-                    </div>
-                    <h1>TODO</h1>
-                </div>
-                {/* few of my blogs */}
-                <div className="mt-12 lg:mt-28">
-                    <div className="flex items-center gap-4 mb-3 text-3xl font-medium tracking-wide">
-                        <span className=" w-14 h-[2px] bg-green-500"></span> Blogs
                     </div>
                     <h1>TODO</h1>
                 </div>

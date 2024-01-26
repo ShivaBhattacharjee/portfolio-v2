@@ -41,10 +41,30 @@ html {
     margin-right: 10px;
 }
 
+.loadmorebtn {
+    padding: 18px;
+    display: flex;
+    gap: 10px;
+    outline: none;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    box-shadow: 10px 10px #808080;
+    border: 2px solid #808080 !important;
+    transition: all ease-in 0.2s !important;
+    margin-right: 10px;
+    text-align: center;
+}
+
 @media(max-width: 768px) {
     .homepagecontactbtn {
         padding: 12px;
         width: 40%;
+    }
+
+    .loadmorebtn {
+        padding: 15px;
+        width: 80%;
     }
 
     .boxshadowbtn {
@@ -53,7 +73,8 @@ html {
 }
 
 .boxshadowbtn:hover,
-.homepagecontactbtn:hover {
+.homepagecontactbtn:hover,
+.loadmorebtn:hover {
     box-shadow: none;
     transform: translateY(4px) !important;
     transition: all ease-in 0.2s;
