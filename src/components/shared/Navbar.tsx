@@ -51,7 +51,7 @@ const Navbar = () => {
                     {navbarItems.map((item) => {
                         const isActive = (pathname.includes(item.href) && item.href.length > 1) || pathname === item.href;
                         return (
-                            <Link key={item.name} href={item.href} className={` ${isActive && "bg-[#272626] dark:bg-white/30 rounded-full text-white dark:text-black"} p-2 text-black dark:text-white`}>
+                            <Link key={item.name} href={item.href} className={` ${isActive && "bg-[#3c3939] dark:bg-white/30 rounded-full text-white dark:text-black"} p-2 text-black dark:text-white`}>
                                 <item.icon />
                             </Link>
                         );

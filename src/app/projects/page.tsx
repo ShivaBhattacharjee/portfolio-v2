@@ -19,7 +19,7 @@ const Projects = () => {
                 <Image src={reactmemoji} height={140} width={140} alt="reaction-memoji" className=" fill-black dark:fill-white"></Image>
             </div>
             <div className="flex pl-4 pr-4 flex-col pb-7 md:pb-0">
-                <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="mt-6 grid place-items-center grid-cols-1 md:grid-cols-2 gap-8">
                     {projectArray.map((item, index) => (
                         <Card item={item} index={index} key={index} />
                     ))}
