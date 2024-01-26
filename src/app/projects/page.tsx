@@ -5,13 +5,15 @@ export function generateMetadata() {
         title: "Projects - Shiva",
     };
 }
+import Link from "next/link";
+
 import reactmemoji from "@/assets/projects/memoji.svg";
 import { projectArray } from "@/assets/projects/projectsArray";
 import workscribble from "@/assets/projects/work-scribble.svg";
 import Card from "@/components/projects/card";
 const Projects = () => {
     return (
-        <div className=" lg:max-w-[50%] lg:m-auto min-h-screen overflow-hidden ">
+        <div className=" lg:max-w-[50%] lg:m-auto min-h-max overflow-hidden ">
             <div className="flex w-full justify-between items-center pr-3 ">
                 <Image src={workscribble} height={300} width={300} alt="work-scribble" priority className=" lg:mt-6" />
                 <Image src={reactmemoji} height={140} width={140} alt="reaction-memoji" className=" fill-black dark:fill-white"></Image>
@@ -22,6 +24,11 @@ const Projects = () => {
                         <Card item={item} index={index} key={index} />
                     ))}
                 </div>
+            </div>
+            <div className="flex mt-7 justify-center items-center">
+                <Link href={"/about"} className="loadmorebtn flex justify-center items-center">
+                    About Me
+                </Link>
             </div>
         </div>
     );

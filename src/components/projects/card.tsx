@@ -10,6 +10,7 @@ interface CardProps {
         hostedLink: string;
         githubLink: string;
         description: string;
+        type: string;
     };
     index: number;
 }
@@ -20,11 +21,17 @@ const Card: React.FC<CardProps> = ({ item, index }) => {
             <div className="flex justify-between items-center">
                 <Image src={item?.image} alt={item.name} height={100} className=" w-16 h-16 rounded-full" width={200}></Image>
                 <div className="flex gap-5 items-center">
-                    <span className=" text-xs rounded-full font-semibold dark:text-white text-black w-24 text-center p-1 dark:bg-white/20 bg-black/20">Open Source</span>
-                    <GitHubLogoIcon className=" w-8 h-8" />
-                    <Link target="_blank" href={item.hostedLink} className=" border-2 rounded-full p-1 group">
-                        <MoveUpRight className=" group-hover:rotate-12 duration-200" />
-                    </Link>
+                    <span className=" text-xs rounded-full font-semibold dark:text-white text-black w-24 text-center p-1 dark:bg-white/20 bg-black/20 capitalize">{item.type}</span>
+                    {item.githubLink && (
+                        <Link href={item.githubLink} target="_blank" rel="noopener noreferrer">
+                            <GitHubLogoIcon className=" w-8 h-8" />
+                        </Link>
+                    )}
+                    {item.hostedLink && (
+                        <Link rel="noopener noreferrer" target="_blank" href={item.hostedLink} className=" border-2 rounded-full p-1 group">
+                            <MoveUpRight className=" group-hover:rotate-12 duration-200" />
+                        </Link>
+                    )}
                 </div>
             </div>
             <h1 className=" text-2xl font-bold mt-4">{item.name}</h1>
