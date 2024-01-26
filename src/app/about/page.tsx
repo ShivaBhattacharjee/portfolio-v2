@@ -50,11 +50,10 @@ const AboutPage = () => {
                         for IDE .
                     </span>
                     <span>
-                        I am an active participant in hackathons too ( have won a few of them) as I love building protoypes in a rushing enviroment. I was a finalist in{" "}
+                        I am an active participant in hackathons too ( have won a few of them) as I love building protoypes in a rushing enviroment. I was also a finalist in{" "}
                         <a href="https://www.sih.gov.in/#" className=" text-orange-400 font-bold" target="_blank" rel="noopener noreferrer">
                             Smart India Hackathon 2023
                         </a>{" "}
-                        too.
                     </span>
                     <span>
                         So if you are a hackathon organiser , looking for a teammate or just want to have a chat with me feel free to connect with me my socials are listed below , do drop a visit to my{" "}
