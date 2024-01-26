@@ -32,35 +32,15 @@ const Terminalcomp: React.FC = () => {
 
     const [currentTime, setCurrentTime] = useState(getFormattedTime());
 
-    const [autoFocus, setAutoFocus] = useState(false);
     const inputRef = useRef<HTMLInputElement | null>(null);
 
     useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 768 && window.innerWidth > 768 ? 300 : 300) {
-                setAutoFocus(true);
-                window.removeEventListener("scroll", handleScroll);
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
-    useEffect(() => {
-        if (autoFocus && inputRef.current) {
-            inputRef.current.focus();
-        }
-
         const intervalId = setInterval(() => {
             setCurrentTime(() => getFormattedTime());
         }, 1000);
 
         return () => clearInterval(intervalId);
-    }, [autoFocus]);
+    }, []);
 
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         setInput(e.target.value);
