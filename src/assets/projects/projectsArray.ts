@@ -1,4 +1,4 @@
-import { animetriximg, muxikimg, quibbleimg,synthiaimg } from ".";
+import { animetriximg, muxikimg, quibbleimg, synthiaimg } from ".";
 export const projectArray = [
     {
         name: "Animetrix",
@@ -37,7 +37,7 @@ export const projectArray = [
         description: "Quibble, a content generation bot, simplifies and elevates your creative process developed in NEXTJS 14 and TYPESCRIPT. Whether crafting engaging blog posts, soulful song lyrics, or attention-grabbing Insta captions, Quibble's advanced algorithms seamlessly transform your ideas into polished, professional content.",
         image: quibbleimg,
         type: "open source",
-        hostedLink: "https://quibbleai.vercel.app",
+        hostedLink: "https://quibble.theshiva.xyz",
         githubLink: "https://www.github.com/shivabhattacharjee/quibble",
     },
 ];
