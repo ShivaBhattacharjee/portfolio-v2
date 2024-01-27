@@ -1,0 +1,10 @@
+node_modules
+.vscode
+.next
+.husky
+.github
+.env*
+.gitignore
+README.md
+.prettierrc.json
+.prettierignore

@@ -2,6 +2,7 @@ import React from "react";
 export function generateMetadata() {
     return {
         title: "About - Shiva",
+        description: "Hi. I'm Shiva Bhattacharjee, a self-taught full stack developer from Guwahati Assam India. I'm a student currently pursuing my bachelors in Computer Science and Technology, I love build software that solves real world problems which is probably why everything I build is Open Source.My everyday tech stack includes NEXTJS , Typescript , Tailwind , and so on ....",
     };
 }
 import { GitHubLogoIcon, InstagramLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";

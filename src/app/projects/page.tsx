@@ -3,6 +3,7 @@ import Image from "next/image";
 export function generateMetadata() {
     return {
         title: "Projects - Shiva",
+        description: "Here are some of my projects that I have worked on , I love building prototypes and solving real world problems , I am an active participant in hackathons too ( have won a few of them) as I love building protoypes in a rushing enviroment. I was also a finalist in Smart India Hackathon 2023",
     };
 }
 import Link from "next/link";
