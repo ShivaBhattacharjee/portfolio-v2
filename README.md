@@ -7,7 +7,7 @@
   <h3 align="center">Portfolio 2.0</h3>
 
   <p align="center">
-    A NextJs portfolio website for 2024
+    Portfolio website for 2024 powered by Nextjs14
     <br/>
     <br/>
     <br/>
