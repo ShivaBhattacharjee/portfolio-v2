@@ -4,6 +4,9 @@ export function generateMetadata() {
     return {
         title: "Projects - Shiva",
         description: "Here are some of my projects that I have worked on , I love building prototypes and solving real world problems , I am an active participant in hackathons too ( have won a few of them) as I love building protoypes in a rushing enviroment. I was also a finalist in Smart India Hackathon 2023",
+        openGraph: {
+            images: "https://cdn.discordapp.com/attachments/1079039236302446705/1207210027333718096/SHIVA_1.png?ex=65ded0f3&is=65cc5bf3&hm=c511a0d118dae42adfc43114877d0689863f328da2dcc78c02826d271a5cd27f&",
+        },
     };
 }
 import Link from "next/link";
