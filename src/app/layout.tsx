@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: "Home - Shiva ",
     description: "Hello there I am Shiva a full stack developer and I love to build products that make people's life easier.",
     openGraph: {
-        images: "https://cdn.discordapp.com/attachments/1079039236302446705/1207210027333718096/SHIVA_1.png?ex=65ded0f3&is=65cc5bf3&hm=c511a0d118dae42adfc43114877d0689863f328da2dcc78c02826d271a5cd27f&",
+        images: "https://media.discordapp.net/attachments/1079039236302446705/1207210027333718096/SHIVA_1.png?ex=65fa8073&is=65e80b73&hm=462f7cc8f90139a68bbdfa88013acaf55c830adc31f982ce0f054eded4c4d491&=&width=1080&height=540",
     },
 };
 
