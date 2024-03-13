@@ -69,7 +69,7 @@ const page = () => {
                     <div className="flex gap-8 w-full justify-center items-center pl-4 pr-4 flex-col pb-7 md:pb-0">
                         <div className="mt-6 relative place-items-center grid grid-cols-1 md:grid-cols-2 gap-8">
                             {projectArray
-                                .filter((_, index) => index === 0 || index === 5)
+                                .filter((_, index) => index === 0 || index === 4)
                                 .map((item, index) => (
                                     <Card item={item} index={index} key={index} />
                                 ))}
