@@ -13,7 +13,7 @@ export const projectArray = [
         description: "Muxik is a music streaming and downloading platform developed on ReactJs. It provides users with a wide variety of songs, albums, playlists, and artists across different genres. Users can enjoy a seamless and immersive music listening experience through the platform.",
         image: muxikimg,
         type: "open source",
-        hostedLink: "https://muxik.netlify.app",
+        hostedLink: "",
         githubLink: "https://www.github.com/shivabhattacharjee/muxik",
     },
     {
