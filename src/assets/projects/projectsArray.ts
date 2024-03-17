@@ -1,4 +1,4 @@
-import { animetriximg, muxikimg, quibbleimg, synthiaimg } from ".";
+import { animetriximg, muxikimg, quibbleimg, recordify, synthiaimg } from "./index";
 export const projectArray = [
     {
         name: "Animetrix",
@@ -8,7 +8,15 @@ export const projectArray = [
         hostedLink: "https://www.animetrix.xyz/",
         githubLink: "https://www.github.com/shivabhattacharjee/animetrix-next",
     },
- {
+    {
+        name: "Recordify",
+        description: "Recordify is a chrome extension that allows users to record their screen and audio. It is developed in vanilla JavaScript . Users can record their screen and audio with a single click and save the recording as a webm file.",
+        image: recordify,
+        type: "open source",
+        hostedLink: "",
+        githubLink: "https://www.github.com/shivabhattacharjee/recordify",
+    },
+    {
         name: "Quibble",
         description: "Quibble, a content generation bot, simplifies and elevates your creative process developed in NEXTJS 14 and TYPESCRIPT. Whether crafting engaging blog posts, soulful song lyrics, or attention-grabbing Insta captions, Quibble's advanced algorithms seamlessly transform your ideas into polished, professional content.",
         image: quibbleimg,
@@ -39,5 +47,5 @@ export const projectArray = [
         type: "open source",
         hostedLink: "",
         githubLink: "https://www.github.com/shivabhattacharjee/synthia",
-    }
+    },
 ];
