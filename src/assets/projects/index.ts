@@ -3,4 +3,5 @@ import muxikimg from "./muxik.png";
 import quibbleimg from "./quibble.jpeg";
 import recordify from "./recordify.png";
 import synthiaimg from "./synthia.webp";
-export { animetriximg, quibbleimg, synthiaimg, muxikimg, recordify };
+import trimImg from "./trim.png";
+export { animetriximg, quibbleimg, synthiaimg, muxikimg, recordify, trimImg };

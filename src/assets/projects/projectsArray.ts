@@ -1,4 +1,4 @@
-import { animetriximg, muxikimg, quibbleimg, recordify, synthiaimg } from "./index";
+import { animetriximg, muxikimg, quibbleimg, recordify, synthiaimg, trimImg } from "./index";
 export const projectArray = [
     {
         name: "Animetrix",
@@ -9,12 +9,12 @@ export const projectArray = [
         githubLink: "https://www.github.com/shivabhattacharjee/animetrix-next",
     },
     {
-        name: "Recordify",
-        description: "Recordify is a chrome extension that allows users to record their screen and audio. It is developed in vanilla JavaScript . Users can record their screen and audio with a single click and save the recording as a webm file.",
-        image: recordify,
+        name: "Trim",
+        description: "Trim is a sleek and efficient URL shortener project developed using Next.js .  With Trim, users can easily shorten lengthy URLs into concise, manageable links, making sharing and distributing web addresses more convenient",
+        image: trimImg,
         type: "open source",
-        hostedLink: "",
-        githubLink: "https://www.github.com/shivabhattacharjee/recordify",
+        hostedLink: "https://trim.theshiva.xyz",
+        githubLink: "https://www.github.com/shivabhattacharjee/trim",
     },
     {
         name: "Quibble",
@@ -23,6 +23,22 @@ export const projectArray = [
         type: "open source",
         hostedLink: "https://quibble.theshiva.xyz",
         githubLink: "https://www.github.com/shivabhattacharjee/quibble",
+    },
+    {
+        name: "Synthia",
+        description: "Synthia is a lightweight and beginner-friendly interpreted programming language developed in Rust. With a simple, intuitive syntax and a focus on ease of use, Synthia is perfect for both newcomers to programming and experienced developers looking for a flexible scripting language",
+        image: synthiaimg,
+        type: "open source",
+        hostedLink: "",
+        githubLink: "https://www.github.com/shivabhattacharjee/synthia",
+    },
+    {
+        name: "Recordify",
+        description: "Recordify is a chrome extension that allows users to record their screen and audio. It is developed in vanilla JavaScript . Users can record their screen and audio with a single click and save the recording as a webm file.",
+        image: recordify,
+        type: "open source",
+        hostedLink: "",
+        githubLink: "https://www.github.com/shivabhattacharjee/recordify",
     },
     {
         name: "Muxik",
@@ -39,13 +55,5 @@ export const projectArray = [
         type: "open source",
         hostedLink: "",
         githubLink: "https://www.github.com/shivabhattacharjee/muxik-backend",
-    },
-    {
-        name: "Synthia",
-        description: "Synthia is a lightweight and beginner-friendly interpreted programming language developed in Rust. With a simple, intuitive syntax and a focus on ease of use, Synthia is perfect for both newcomers to programming and experienced developers looking for a flexible scripting language",
-        image: synthiaimg,
-        type: "open source",
-        hostedLink: "",
-        githubLink: "https://www.github.com/shivabhattacharjee/synthia",
     },
 ];
