@@ -1,4 +1,4 @@
-import { animetriximg, muxikimg, quibbleimg, recordify, synthiaimg, trimImg } from "./index";
+import { animetriximg, muxikimg, quibbleimg, recordify, synthiaimg, trimImg, wasteeasy } from "./index";
 export const projectArray = [
     {
         name: "Animetrix",
@@ -7,6 +7,14 @@ export const projectArray = [
         type: "open source",
         hostedLink: "https://www.animetrix.xyz/",
         githubLink: "https://www.github.com/shivabhattacharjee/animetrix-next",
+    },
+    {
+        name: "Waste Easy",
+        description: "WasteEasy is an app designed to streamline waste management. Developed during the Envision Hackathon, it focuses on waste classification and encourages proper waste segregation. Users can earn points or coupons by utilizing WasteEasy for their waste disposal needs.",
+        image: wasteeasy,
+        type: "Hackathon Project",
+        hostedLink: "https://wasteeasy.theshiva.xyz/",
+        githubLink: "https://www.github.com/shivabhattacharjee/wasteeasy",
     },
     {
         name: "Trim",

@@ -4,4 +4,5 @@ import quibbleimg from "./quibble.jpeg";
 import recordify from "./recordify.png";
 import synthiaimg from "./synthia.webp";
 import trimImg from "./trim.png";
-export { animetriximg, quibbleimg, synthiaimg, muxikimg, recordify, trimImg };
+import wasteeasy from "./wastelogo.png";
+export { animetriximg, quibbleimg, synthiaimg, muxikimg, recordify, trimImg, wasteeasy };

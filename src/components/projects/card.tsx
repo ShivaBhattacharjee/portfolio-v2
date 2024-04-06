@@ -21,7 +21,7 @@ const Card: React.FC<CardProps> = ({ item, index }) => {
             <div className="flex justify-between items-center">
                 <Image src={item?.image} alt={item.name} height={100} className=" w-16 h-16 rounded-full" width={200}></Image>
                 <div className="flex gap-3 flex-wrap items-center">
-                    <span className=" text-xs rounded-full font-semibold dark:text-white text-black w-24 text-center p-1 dark:bg-white/20 bg-black/20 capitalize">{item.type}</span>
+                    <span className=" text-xs rounded-full font-semibold dark:text-white text-black min-w-24 max-w-44 p-[0.3rem] text-center  dark:bg-white/20 bg-black/20 capitalize">{item.type}</span>
                     {item.githubLink && (
                         <Link href={item.githubLink} target="_blank" rel="noopener noreferrer">
                             <GitHubLogoIcon className=" w-8 h-8" />
