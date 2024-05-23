@@ -30,7 +30,7 @@ const CopyCmd = () => {
             });
     };
     return (
-        <div onClick={handleCopyToClipboard} className="homepagecontactbtn">
+        <div onClick={handleCopyToClipboard} className="homepagecontactbtn pointer-events-none">
             {copied ? <ClipboardCheck /> : <Clipboard />}
             npx shivadev
         </div>
