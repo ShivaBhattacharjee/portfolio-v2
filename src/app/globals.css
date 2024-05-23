@@ -59,7 +59,8 @@ html {
 @media(max-width: 768px) {
     .homepagecontactbtn {
         padding: 12px;
-        width: 40%;
+        width: 45%;
+        box-shadow: 5px 4px #808080;
     }
 
     .loadmorebtn {

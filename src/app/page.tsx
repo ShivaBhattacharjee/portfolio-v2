@@ -1,11 +1,12 @@
 import React from "react";
 import { GitHubLogoIcon, InstagramLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
-import { ChevronRight, Info, MailPlus, MouseIcon, Terminal } from "lucide-react";
+import { ChevronRight, MailPlus, MouseIcon, Terminal } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 import clock from "@/assets/clock.svg";
 import { projectArray } from "@/assets/projects/projectsArray";
+import CopyCmd from "@/components/CopyCmd";
 import Card from "@/components/projects/card";
 import Contact from "@/components/shared/Contact";
 import Skills from "@/components/skills/Skills";
@@ -30,10 +31,7 @@ const page = () => {
                     I develop open-source <span className="  text-blue-500 uppercase font-bold">full-stack</span> apps/tools and occasionally take on <span className=" uppercase text-blue-500 font-bold tracking-wider">freelance</span> projects.
                 </p>
                 <div className="flex items-center gap-3 lg:gap-6 flex-wrap">
-                    <Link href={"/about"} className="homepagecontactbtn">
-                        <Info className=" lg:w-6 h-6" />
-                        About Me
-                    </Link>
+                    <CopyCmd />
                     <a href="https://github.com/shivabhattacharjee" target="_blank" rel="noopener noreferrer">
                         <GitHubLogoIcon className=" h-6 lg:h-10 w-8 lg:w-8 duration-200 hover:-translate-y-2 cursor-pointer" />
                     </a>

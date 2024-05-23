@@ -1,6 +1,6 @@
 <p align="center">
 
-  <a href="https://github.com/ShivaBhattacharjee/vermilion">
+  <a href="https://github.com/ShivaBhattacharjee/portfolio-v2">
     <img src="https://github.com/ShivaBhattacharjee/portfolio-v2/assets/95211406/708decd8-8e67-4d59-86e9-f50cac7e5d0b" alt="Logo" >
   </a>
 <br/>
