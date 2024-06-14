@@ -1,4 +1,4 @@
-import { animetriximg, muxikimg, quibbleimg, recordify, synthiaimg, trimImg, wasteeasy } from "./index";
+import { animetriximg, muxikimg, quibbleimg, recordify, sso, synthiaimg, trimImg, wasteeasy } from "./index";
 export const projectArray = [
     {
         name: "Animetrix",
@@ -15,6 +15,14 @@ export const projectArray = [
         type: "Hackathon Project",
         hostedLink: "https://wasteeasy.theshiva.xyz/",
         githubLink: "https://www.github.com/shivabhattacharjee/wasteeasy",
+    },
+    {
+        name: "SSO-Auth",
+        description: "SSO is a Single Sign-On (SSO) system that allows users to seamlessly authenticate across multiple applications using a single set of credentials. Built with Next.js, PostgreSQL, Prisma, and Tailwind CSS, SSO offers a secure and efficient way to manage user authentication",
+        image: sso,
+        type: "Open Source",
+        hostedLink: "http://demosso.theshiva.xyz/",
+        githubLink: "https://www.github.com/shivabhattacharjee/sso",
     },
     {
         name: "Trim",
