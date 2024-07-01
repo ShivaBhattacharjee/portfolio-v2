@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 
-import bannerUrl from "../../public/banner.png";
-
 import "./globals.css";
 
 import Footer from "@/components/shared/Footer";
@@ -16,7 +14,7 @@ export const metadata: Metadata = {
     title: "Home - Shiva ",
     description: "Hello there I am Shiva a full stack developer and I love to build products that make people's life easier.",
     openGraph: {
-        images: [{ url: bannerUrl.src, alt: "Your Alt Text" }],
+        images: "https://www.theshiva.xyz/_next/static/media/banner.e6bde3c9.png",
     },
 };
 
