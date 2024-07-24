@@ -38,7 +38,7 @@ const page = () => {
                     <a href="https://twitter.com/sh17va" target="_blank" rel="noopener noreferrer">
                         <TwitterLogoIcon className=" h-6 lg:h-10 w-8 lg:w-8 duration-200 hover:-translate-y-2 cursor-pointer" />
                     </a>
-                    <a href="mailto:itsshivahere@outlook.com?body=Hello" target="_blank" rel="noopener noreferrer">
+                    <a href="mailto:hello@shivadev.me?body=Hello" target="_blank" rel="noopener noreferrer">
                         <MailPlus className=" h-6 lg:h-10 w-8 lg:w-8 duration-200 hover:-translate-y-2 cursor-pointer" />
                     </a>
                     <a href="https://instagram.com/shivahereig" target="_blank" rel="noopener noreferrer">
