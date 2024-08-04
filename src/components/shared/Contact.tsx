@@ -52,8 +52,8 @@ const Contact = () => {
                 </a>{" "}
                 if that&apos;s more your speed.
             </span>
-            <a href="mailto:hello@shivadev.me?body=Hello" target="_blank" className="flex items-center gap-2 text-xl font-medium">
-                <MailPlus /> hello@shivadev.me
+            <a href="mailto:itsshivahere@outlook.com?body=Hello" target="_blank" className="flex items-center gap-2 text-xl font-medium">
+                <MailPlus /> itsshivahere@outlook.com
             </a>
             <form className="flex flex-col gap-4" autoComplete="off" ref={form} onSubmit={sendEmail}>
                 <div className="flex justify-center items-center flex-wrap gap-3 w-full">

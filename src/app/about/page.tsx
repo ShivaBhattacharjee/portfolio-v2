@@ -85,7 +85,7 @@ const AboutPage = () => {
                     <a href="https://twitter.com/sh17va" target="_blank" rel="noopener noreferrer">
                         <TwitterLogoIcon className=" h-6 lg:h-10 w-8 lg:w-8 duration-200 hover:-translate-y-2 cursor-pointer" />
                     </a>
-                    <a href="mailto:hello@shivadev.me?body=Hello" target="_blank" rel="noopener noreferrer">
+                    <a href="mailto:itsshivahere@outlook.com?body=Hello" target="_blank" rel="noopener noreferrer">
                         <MailPlus className=" h-6 lg:h-10 w-8 lg:w-8 duration-200 hover:-translate-y-2 cursor-pointer" />
                     </a>
                     <a href="https://instagram.com/shivahereig" target="_blank" rel="noopener noreferrer">
@@ -94,8 +94,8 @@ const AboutPage = () => {
                 </div>
                 <p className=" text-md lg:text-2xl whitespace-break-spaces font-normal">
                     I&apos;m excited to connect with others via email (
-                    <a href="mailto:hello@shivadev.me?body=Hello" rel="noopener noreferrer" target="_blank" className=" text-blue-500 italic font-bold">
-                        hello@shivadev.me
+                    <a href="mailto:itsshivahere@outlook.com?body=Hello" rel="noopener noreferrer" target="_blank" className=" text-blue-500 italic font-bold">
+                        itsshivahere@outlook.com
                     </a>
                     ) and{" "}
                     <a href="https://twitter.com/sh17va" rel="noopener noreferrer" target="_blank" className="font-bold italic text-blue-500">
