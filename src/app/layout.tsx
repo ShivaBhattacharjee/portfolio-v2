@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 
 import "./globals.css";
@@ -8,7 +8,7 @@ import Footer from "@/components/shared/Footer";
 import Navbar from "@/components/shared/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
-const inter = Inter({ subsets: ["latin"] });
+const inter = Roboto({ weight: "400", style: "normal", subsets: ["greek"] });
 
 export const metadata: Metadata = {
     title: "Home - Shiva ",

@@ -55,12 +55,12 @@ const Contact = () => {
             <a href="mailto:itsshivahere@outlook.com?body=Hello" target="_blank" className="flex items-center gap-2 text-xl font-medium">
                 <MailPlus /> itsshivahere@outlook.com
             </a>
-            <form className="flex flex-col gap-4" autoComplete="off" ref={form} onSubmit={sendEmail}>
+            <form className="flex flex-col w-full lg:w-[80%] gap-4" autoComplete="off" ref={form} onSubmit={sendEmail}>
                 <div className="flex justify-center items-center flex-wrap gap-3 w-full">
-                    <input type="text" placeholder="Please Enter Your Full Name" className=" flex-1 border-2 duration-300 rounded-lg p-3 dark:border-white/40 border-black/40 bg-transparent" name="to_name" required />
-                    <input type="email" placeholder="Please Enter Your Email" className=" flex-1 border-2 duration-200 rounded-lg p-3 dark:border-white/40 border-black/40 bg-transparent" name="from_name" required />
+                    <input type="text" placeholder="Please Enter Your Full Name" className=" duration-100 focus:dark:border-white focus:border-black focus:dark:outline-white focus:outline-black flex-1 border-2  rounded-lg p-3 dark:border-white/40 border-black/40 bg-transparent" name="to_name" required />
+                    <input type="email" placeholder="Please Enter Your Email" className=" duration-100 focus:dark:border-white focus:border-black focus:dark:outline-white focus:outline-black flex-1 border-2  rounded-lg p-3 dark:border-white/40 border-black/40 bg-transparent" name="from_name" required />
                 </div>
-                <textarea placeholder="Enter Your Message" className=" bg-transparent h-64 dark:border-white/40 border-black/40 p-4 rounded-lg w-full flex-auto  border-2" required autoComplete="false" name="message" value={message} onChange={handleMessageChange}></textarea>
+                <textarea placeholder="Enter Your Message" className=" duration-100 focus:dark:border-white focus:border-black focus:dark:outline-white focus:outline-black bg-transparent h-64 dark:border-white/40 border-black/40 p-4 rounded-lg w-full flex-auto  border-2" required autoComplete="false" name="message" value={message} onChange={handleMessageChange}></textarea>
                 {loading ? (
                     <button className="flex justify-center items-center boxshadowbtn gap-3 " disabled>
                         <ScaleLoader color="#808080" className=" scale-50" /> Processing.....
