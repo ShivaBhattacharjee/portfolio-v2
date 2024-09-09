@@ -32,7 +32,7 @@ const AboutPage = () => {
                 </h2>
                 <p className="text-md lg:text-2xl flex flex-col gap-2 whitespace-break-spaces font-normal">
                     <span>
-                        Hey , stranger 👋 I&apos;m Shiva Bhattacharjee, a self-taught full stack developer from Guwahati Assam India. I&apos;m a student currently pursuing my bachelors in <span className=" font-bold">Computer Science and Technology</span>, I love build software that solves real world problems which is probably why everything I build is{" "}
+                        Hey , stranger 👋 I&apos;m Shiva Bhattacharjee, a self-taught full stack developer from Guwahati Assam India. I&apos;m a student currently pursuing my bachelors in <span className=" font-bold">Computer Science and Technology</span>, I love building software that solves real world problems which is probably why everything I build is{" "}
                         <a href="https://github.com/shivabhattacharjee" target="_blank" rel="noopener noreferrer" className=" font-bold text-green-500">
                             Open Source
                         </a>
