@@ -44,8 +44,8 @@ const AboutPage = () => {
                     </span>
                     <span>
                         My Operating System of choice is{" "}
-                        <a href="https://fedoraproject.org/" target="_blank" rel="noopener noreferrer" className=" text-lg text-blue-500 font-bold uppercase">
-                            Fedora
+                        <a href="https://www.apple.com/in/macos/macos-sequoia/" target="_blank" rel="noopener noreferrer" className=" text-lg text-blue-500 font-bold uppercase">
+                            MAC-OS
                         </a>{" "}
                         and{" "}
                         <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer" className=" text-lg text-blue-500 font-bold uppercase">
